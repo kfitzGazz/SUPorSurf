@@ -1,42 +1,66 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+<html>
+<head>
+  <title>Login And Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+        <button type="button" class="toggle-btn" onclick="register()">Register</button>
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
+    <div class="social-icons">
+      <img src="fb.png">
+      <img src="tw.png">
+      <img src="gp.png">
+    </div>
+    <form id="login" class="input-group">
+      <input type="text" class="input-field" placeholder="User Id"required>
+      <input type="text" class="input-field" placeholder="Enter Password"required>
+      <input type="checkbox" class="check-box"><span>Remember Password</span>
+      <button type="submit" class="submit-btn">Log in</button>
     </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
+    <form id="register" class="input-group">
+      <input type="text" class="input-field" placeholder="User Id"required>
+      <input type="email" class="input-field" placeholder="Email Id"required>
+      <input type="checkbox" class="check-box"><span>I agree to the terms and conditions</span>
+      <button type="submit" class="submit-btn">Register</button>
     </form>
-  </div>
 </div>
 
-<script src="./js/login.js"></script>
+  </div>
+<script>
+  var x = document.getElementById("login");
+  var y = document.getElementById("register");
+  var z = document.getElementById("btn");
+
+  function register(){
+    x.style.left = "-400px"
+    y.style.left = "50px"
+    z.style.left = "100px"
+  }
+  function login(){
+    x.style.left = "50px"
+    y.style.left = "450px"
+    z.style.left = "0px"
+  }
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
