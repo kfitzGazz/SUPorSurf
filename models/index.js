@@ -1,13 +1,32 @@
 const User = require('./User');
-const Project = require('./Project');
+const SurfBoard = require('./SurfBoard');
+const Emoji = require('./Emoji');
 
-User.hasMany(Project, {
+User.hasMany(SurfBoard, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+SurfBoard.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Project };
+User.hasMany(Emoji, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Emoji.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+SurfBoard.hasMany(Emoji, {
+  foreignKey: 'surfboard_id',
+  onDelete: 'CASCADE'
+});
+
+Emoji.belongsTo(SurfBoard, {
+  foreignKey: 'surfboard_id'
+});
+
+module.exports = { User, SurfBoard, Emoji };
