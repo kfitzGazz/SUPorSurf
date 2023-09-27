@@ -1,0 +1,19 @@
+[
+  {
+    "locationCity": "Miami",
+    "locationState": "Florida",
+    "comments": "comments"
+
+  },
+  {
+        "locationCity": "San Diego",
+    "locationState": "California",
+    "comments": "comments"
+
+  },
+  {
+    "locationCity": "Cleveland",
+    "locationState": "Ohio",
+    "comments": "comments"
+  }
+]
