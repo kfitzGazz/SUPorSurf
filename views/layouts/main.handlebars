@@ -2,45 +2,87 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Rubik" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <!--START META DATA PAGE DESCRIPTION-->
+  <meta name="Author" content="Calmar Solutions Schweiz - Erin McGowan - www.calmarsolutions.ch">
+  <meta name="Copyright" content="Calmar Solutions">
+  <meta name="Credit" content="https://thenounproject.com/">
+  <meta name="description" content="Margs Surfcamp Margaret River">
+  <meta name="keywords" content="Surfing, Camping, Margaret River, Western Australia">
+  <!--END META DATA PAGE DESCRIPTION-->
+  <title>OnePage Gradient Template</title>
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
 
-               <a href="/login">signup</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+  <nav>
+    <a href="#top"><img class="arrow_image" src="./template/images/arrow.svg"></a>
+    <a name="top"></a>
+    <div id="change_class" class="flex_container section menu_section">
+      <div class="flex_item branding">
+        <p></p>
+      </div>
+      <div class="flex_item menu_item dropdown">
+        <p>Menu</p>
+        <div class="dropdown-content">
+          <div class="menu_item menu_item_inside"><a href="#top">
+              <p>Home</p>
+            </a></div>
+          <a href="">
+            <div class="menu_item menu_item_inside"><a href="#team">
+                <p>Team</p>
+              </a></div>
+            <a href="">
+              <div class="menu_item menu_item_inside"><a href="#contact">
+                  <p>Offers</p>
+                </a></div>
+        </div>
+      </div>
+      <div class="flex_item menu_item menu_item_outside"><a href="#top">
+          <p>Home</p>
+        </a></div>
+      <div class="flex_item menu_item menu_item_outside"><a href="#team">
+          <p>Team</p>
+        </a></div>
+      <div class="flex_item menu_item menu_item_outside"><a href="#contact">
+          <p>Offers</p>
+        </a></div></a>
+    </div>
+    <!-- Conditionally render login or logout links -->
+    {{#if logged_in}}
+    <a href="/profile">profile</a> |
+    <button class="no-button" id="logout">logout</button>
+    {{else}}
+    <a href="/login">login</a>
+
+    <a href="/login">signup</a>
+    {{/if}}
+  </nav>
+  </header>
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
+
+  </footer>
   </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+  <div id="map"></div>
+
+<div class="section footer_section">
+	<a href="https://www.calmarsolutions.ch"><p class="footer_text">Margs Surf Camp - Wallcliffe Rd. 1050, Margaret River WA - WebDevelopment: Calmar Solutions</p></a>
+</div>
+
 </body>
 
 </html>
