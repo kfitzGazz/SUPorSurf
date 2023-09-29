@@ -1,44 +1,136 @@
 <div class="section page third_section">
-<a name="contact"></a>
+	<a name="contact"></a>
 	<div class="gradient gradient_red_yellow gradient_third_section"></div>
 	<div class="section_container third_section_container flex_container flex_center">
 		<div class="text header_text">
-			<h1>Offers</h1>
+			<h1>Welcome, {{username}}!</h1>
 		</div>
-		<a href="#link6"><div class="feature offer flex_feature_item offer1">
-			<h2>Surfing</h2>
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br>
-			<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
-		</div></a>
-		<a href="#link7"><div class="feature offer flex_feature_item offer2">
-			<h2>Partys</h2>
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br>
-			<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
-		</div></a>
-		<a href="#link8"><div class="feature offer flex_feature_item offer3">
-			<h2>Good Food</h2>
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br>
-			<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
-		</div></a>
+	</div>
+	<div class="feature offer flex_feature_item offer3">
+		<div class="row mt-4">
+			<div class="col-md-6">
+				<h3>Create a New surfboard:</h3>
+
+				<form class="form new-surfboard-form">
+					<div class="form-group">
+						<label for="surfboard-name">Surfboard name:</label>
+						<input class="form-input" type="text" id="surfboard-name" name="surfboard-name" />
+					</div>
+					<div class="form-group">
+						<label for="surfboard-desc">Description:</label>
+						<textarea class="form-input" id="surfboard-desc" name="surfboard-desc"></textarea>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Create</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+{{#if surfboards.length}}
+<div class="col-md-6 surfboard-list">
+	<h3>What are the waves saying?</h3>
+
+	{{#each surfboards as |surfboard|}}
+	<div class="row mb-2">
+		<div class="col-md-8">
+			<h4><a href="/surfboard/{{surfboard.id}}">{{surfboard.username}}</a></h4>
+		</div>
+		<div class="col-md-4">
+			<button class="btn btn-sm btn-danger" data-id="{{surfboard.id}}">DELETE</button>
+		</div>
+	</div>
+	{{/each}}
+</div>
+{{/if}}
+</div>
+
+
+
+{{!-- </div>
+<a href="#link6">
+	<div class="feature offer flex_feature_item offer1">
+		<h2>Surfing</h2>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+			dolore magna aliquyam erat, sed diam voluptua.</p><br>
+		<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+			feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+	</div>
+</a>
+<a href="#link7">
+	<div class="feature offer flex_feature_item offer2">
+		<h2>Partys</h2>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+			dolore magna aliquyam erat, sed diam voluptua.</p><br>
+		<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+			feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+	</div>
+</a>
+<a href="#link8">
+	<div class="feature offer flex_feature_item offer3">
+		<h2>Good Food</h2>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+			dolore magna aliquyam erat, sed diam voluptua.</p><br>
+		<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+			feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+	</div>
+</a>
+</div>
+</div>
+
+<div id="map"></div> --}}
+
+{{!-- handlbar start --}}
+
+{{!-- <div class="row">
+	<div class="col-auto">
+		<h2>Welcome, {{username}}!</h2>
 	</div>
 </div>
 
-<div id="map"></div>
+<div class="row mt-4">
+	<div class="col-md-6">
+		<h3>Create a New surfboard:</h3>
 
+		<form class="form new-surfboard-form">
+			<div class="form-group">
+				<label for="surfboard-name">surfboard name:</label>
+				<input class="form-input" type="text" id="surfboard-name" name="surfboard-name" />
+			</div>
+			<div class="form-group">
+				<label for="surfboard-funding">needed funding ($):</label>
+				<input class="form-input" type="number" id="surfboard-funding" name="surfboard-funding" />
+			</div>
+			<div class="form-group">
+				<label for="surfboard-desc">description:</label>
+				<textarea class="form-input" id="surfboard-desc" name="surfboard-desc"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Create</button>
+			</div>
+		</form>
+	</div>
 
-{{!-- <body>
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
-</div>
-</body> --}}
+	{{#if surfboardength}}
+	<div class="col-md-6 surfboard-list">
+		<h3>Current surfboard:</h3>
+
+		{{#each surfboard as |surfboard|}}
+		<div class="row mb-2">
+			<div class="col-md-8">
+				<h4><a href="/surfboard/{{surfboard.id}}">{{surfboard.name}}</a></h4>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-sm btn-danger" data-id="{{surfboard.id}}">DELETE</button>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+	{{/if}}
+</div> --}}
+
+<script src="./public/js/profile.js"></script>
