@@ -15,6 +15,7 @@ SurfBoard.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     locationState: {
       type: DataTypes.STRING,
       allowNull: false,
