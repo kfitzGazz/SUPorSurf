@@ -57,14 +57,16 @@ $('a[href*="#"]')
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#surfboard-username').value.trim();
+  const locationCity = document.querySelector('#surfboard-city').value.trim();
  
-  const description = document.querySelector('#surfboard-desc').value.trim();
+  const locationState = document.querySelector('#surfboard-state').value.trim();
 
-  if (username && description) {
+  const comments = document.querySelector('#surfboard-comm').value.trim();
+
+  if (locationCity && locationState && comments ) {
     const response = await fetch(`/api/surfboards`, {
       method: 'POST',
-      body: JSON.stringify({ username, description }),
+      body: JSON.stringify({ locationCity, locationState, comments }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -77,6 +79,9 @@ const newFormHandler = async (event) => {
     }
   }
 };
+//^^if username and description have values, then it will send a http post request to an api endpoint (api/surfboard)
+//requests for the username and description date
+
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
