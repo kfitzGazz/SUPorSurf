@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
 //http://localhost:3001/SurfBoard/1
 router.get('/surfboard/:id', async (req, res) => {
   try {
-    const SurfBoardData = await SurfBoard.findByPk(req.params.id, {
+    const SurfBoardData = await SurfBoard.findByPk(req.params.id,{
       include: [
         {
           model: User,
@@ -50,7 +50,7 @@ router.get('/surfboard/:id', async (req, res) => {
 
     res.render('surfboard', {
       ...surfBoard,
-      logged_in: req.session.logged_in
+      // logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
