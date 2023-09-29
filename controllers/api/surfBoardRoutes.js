@@ -37,7 +37,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 
 //http://localhost:3001/api/SurfBoards/
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const SurfBoardData = await SurfBoard.findAll({
       include: [

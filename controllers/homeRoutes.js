@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 //all html routes are doing get method is reading
 //http://localhost:3001/
+//this will read surfboard
 router.get('/', async (req, res) => {
   try {
     // Get all SurfBoards and JOIN with user data
@@ -24,7 +25,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      SurfBoards, 
+      surfBoards, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -45,10 +46,10 @@ router.get('/surfboard/:id', async (req, res) => {
       ],
     });
 
-    const SurfBoard = SurfBoardData.get({ plain: true });
+    const surfBoard = SurfBoardData.get({ plain: true });
 
     res.render('surfboard', {
-      ...SurfBoard,
+      ...surfBoard,
       logged_in: req.session.logged_in
     });
   } catch (err) {
