@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+//^this post creates a new user, saves thei session data showing they are logged in
 
 router.post('/login', async (req, res) => {
   try {
@@ -50,6 +51,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+//^user login, checks to see if the email exists in database and if password is correct. creates user session
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
@@ -60,5 +62,6 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+//this logs out the user 
 
 module.exports = router;
