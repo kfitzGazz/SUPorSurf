@@ -22,11 +22,11 @@ router.post('/', async (req, res) => {
 
 
 router.delete('/:id', async (req, res) => {
+  console.log(req.params.id,req.session.user_id)
   try {
     const SurfBoardData = await SurfBoard.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
