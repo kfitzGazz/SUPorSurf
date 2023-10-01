@@ -77,7 +77,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
 
       alert('Successful wave');
-      // document.location.replace(`/surfboard/${id}`);
+       document.location.replace(`/surfboard`);
 
     } else {
       alert('Failed to create surfboard');
@@ -100,7 +100,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
 
       alert('Surfboard deleted')
-      // document.location.replace('/surfboard');
+      document.location.replace('/surfboard');
 
     } else {
       alert('Failed to delete surfboard');
