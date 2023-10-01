@@ -24,25 +24,6 @@
 } */
 
 /*BASIC*/
-.menu_section {
-	display: flex;
-	justify-content: space-between;
-	/* This will evenly distribute items horizontally */
-	align-items: center;
-	padding-right: 20px;
-	/* Add padding to the right to create space between the menu items and buttons */
-}
-
-.menu_buttons {
-	display: flex;
-	gap: 10px;
-	/* Adjust the gap between buttons as needed */
-}
-
-.menu_item_outside {
-	/* Your existing styles for these buttons */
-}
-
 html {
 	height: auto;
 	width: auto;
@@ -129,7 +110,8 @@ a:active {
 	
 	transform & rotate
 	-webkit-transition: -webkit-transform .1s;
-	Safari transition: transform .1s;
+	Safari
+	transition: transform .1s;
 
 	-webkit-transform: scale(1.0) rotate(-90deg);
 	-ms-transform: scale(1.0) rotate(-90deg);
@@ -242,10 +224,10 @@ a:active {
 }
 
 .branding {
-	min-width: 90px;
-	min-height: 10px;
+	min-width: 200px;
+	min-height: 90px;
 	margin-bottom: 10px;
-	background-color: rgba(255, 255, 255, 0.104);
+	background-color: white;
 
 	-webkit-box-shadow: 9px 10px 39px -2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 9px 10px 39px -2px rgba(0, 0, 0, 0.3);
@@ -264,14 +246,12 @@ a:active {
 }
 
 .menu_item {
-	padding-top: 23;
-	padding-bottom: 23;
-	width: 100px;
-	height: 25px;
-	padding: 10px;
-	margin: 20px;
-	float: right;
-	background-color: #fdf9f9;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	min-width: 70px;
+	background-color: white;
 	text-align: center;
 
 	-webkit-transition: -webkit-transform .1s;
@@ -333,11 +313,11 @@ a:active {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
+
 		background-color: transparent;
 	}
 
 	.menu_item_outside {
-		float: right;
 		display: none;
 	}
 }
@@ -448,7 +428,7 @@ a:active {
 .offer {
 	min-width: 350px !important;
 	max-width: 500px !important;
-	background-color: rgba(111, 32, 32, 0.05);
+	background-color: rgba(255, 255, 255, .05);
 }
 
 .offer h2 {
@@ -509,7 +489,6 @@ a:active {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 /* COMMENTED BELOW CODE OUT. CODE IS FOR SURFER PICTURES ON LOGIN PAGE WE ARENT USING */
 /* .feature h2 {line-height: 0;}
