@@ -47,7 +47,7 @@ router.get('/surfboard/:id', async (req, res) => {
     });
 
     const surfBoard = SurfBoardData.get({ plain: true });
-
+    console.log(surfBoard)
     res.render('surfBoard', {
       ...surfBoard,
       // logged_in: req.session.logged_in
