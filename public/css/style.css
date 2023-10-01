@@ -127,13 +127,13 @@ a:active {
 	height: 100px;
 	z-index: 200;
 	
-	/*transform & rotate*/
+	transform & rotate
 	-webkit-transition: -webkit-transform .1s;
 	Safari transition: transform .1s;
 
 	-webkit-transform: scale(1.0) rotate(-90deg);
 	-ms-transform: scale(1.0) rotate(-90deg);
-	transform: scale(1.0) rotate(-90deg);
+	transform: scale(1.0) rotate(360deg);
 }
 
 .arrow_image:hover {
