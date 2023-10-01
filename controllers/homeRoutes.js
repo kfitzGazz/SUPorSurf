@@ -35,9 +35,9 @@ router.get('/', async (req, res) => {
 
 
 //http://localhost:3001/SurfBoard/1
-router.get('/surfboard/:id', async (req, res) => {
+router.get('/surfboard', async (req, res) => {
   try {
-    const SurfBoardData = await SurfBoard.findByPk(req.params.id,{
+    const SurfBoardData = await SurfBoard.findAll({
       include: [
         {
           model: User,
@@ -45,13 +45,14 @@ router.get('/surfboard/:id', async (req, res) => {
 
         },
       ],
+      order:[["date_created", "desc"]] 
     });
-
-    const surfBoard = SurfBoardData.get({ plain: true });
-    console.log(surfBoard)
+const surfBoards = SurfBoardData.map(surfBoard=>surfBoard.get({plain:true}));
+  
+    console.log(surfBoards)
     res.render('surfBoard', {
-      ...surfBoard,
-      // logged_in: req.session.logged_in
+      surfBoards,
+       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -59,26 +60,7 @@ router.get('/surfboard/:id', async (req, res) => {
 });
 
 
-//http://localhost:3001/profile
-// Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: SurfBoard }],
-//     });
 
-//     const user = userData.get({ plain: true });
-
-//     res.render('profile', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 //http://localhost:3001/login
 router.get('/login', (req, res) => {
