@@ -284,10 +284,12 @@ a:active {
   .menu_item_inside {
     box-shadow: none;
     background-color: transparent;
+    
   }
 
   .menu_item_outside {
     display: none;
+    
   }
 }
 
