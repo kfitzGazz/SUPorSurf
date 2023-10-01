@@ -1,58 +1,73 @@
-{{!-- <body> --}}
-<a href="#top"><img class="arrow_image" src="./template/images/arrow.svg"></a>
-<a name="top"></a>
-<div id="change_class" class="flex_container section menu_section">
-	<div class="flex_item branding"><p></p></div>
-	<div class="flex_item menu_item dropdown">
-		<p>Menu</p>
-		<div class="dropdown-content">
-			<div class="menu_item menu_item_inside"><a href="#top"><p>Home</p></a></div>
-			<a href=""><div class="menu_item menu_item_inside"><a href="#team"><p>Team</p></a></div>
-			<a href=""><div class="menu_item menu_item_inside"><a href="#contact"><p>Offers</p></a></div>
-		</div>
-	</div>
-	<div class="flex_item menu_item menu_item_outside"><a href="#top"><p>Home</p></a></div>
-    <div class="flex_item menu_item menu_item_outside"><a href="#team"><p>Team</p></a></div>
-    <div class="flex_item menu_item menu_item_outside"><a href="#contact"><p>Offers</p></a></div></a>
-</div>
-
-<div class="section page header_section">
-<div class="gradient gradient_red_blue gradient_header_section"></div>
-	<div class="section_container header_section_container flex_container flex_header_container">
-		<div class="text header_text">
-			<h1>Sup or Surf</h1>
-		</div>
-		<div class="text body_text flex_item flex_header_item">
-			<h2 class="header_quote">Join us on our Journey. Come Surf, come Swim and come by for a Beer!</h2>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-{{!-- <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+{{!--<body> --}}
+  <a href="#top"><img class="arrow_image" src="./template/images/arrow.svg"></a>
+  <a name="top"></a>
+  <div id="change_class" class="flex_container section menu_section">
+    <div class="flex_item branding"><img src="./images/logo.png" alt="" style="width: 170px;height: 120px;"></p>
+    </div>
+    <div class="flex_item menu_item dropdown">
+      <p>Menu</p>
+      <div class="dropdown-content">
+        <div class="menu_item menu_item_inside"><a href="#top">
+            <p>Home</p>
+          </a></div>
+        <a href="">
+          <div class="menu_item menu_item_inside"><a href="#team">
+              <p>Login</p>
+            </a></div>
+          <a href="">
+            <div class="menu_item menu_item_inside"><a href="#contact">
+                <p>Surfboard/1</p>
+              </a></div>
+      </div>
+    </div>
+    <div class="flex_item menu_item menu_item_outside"><a href="#top">
+        <p>Home</p>
+      </a></div>
+    <div class="flex_item menu_item menu_item_outside"><a href="#team">
+        <p>Login</p>
+      </a></div>
+    <div class="flex_item menu_item menu_item_outside"><a href="#contact">
+        <p>Surfboard/1</p>
+      </a></div></a>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
+
+  <div class="section page header_section">
+    <div class="gradient gradient_red_blue gradient_header_section"></div>
+    <div class="section_container header_section_container flex_container flex_header_container">
+      <div class="text header_text">
+        <h1>Sup or Surf</h1>
+      </div>
+      <div class="text body_text flex_item flex_header_item">
+        <h2 class="header_quote">Join us on our Journey. Come Surf, come Swim and come by for a Beer!</h2>
+      </div>
+    </div>
   </div>
-</div>
-{{/each}} --}}
+
+
+
+
+
+  {{!-- <!-- Loop over each object in the projects array -->
+  {{#each projects as |project| }}
+  <div class="row mb-4 project">
+    <div class="col-md-5">
+      <h2>
+        <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+        {{{get_emoji}}}
+        <a href="/project/{{project.id}}">{{project.name}}</a>
+      </h2>
+      <p>
+        <span for="img" aria-label="money">💲</span>
+        <!-- Pass needed_funding value to the helper function -->
+        <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
+        needed!
+      </p>
+      <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+    </div>
+    <div class="col-md-7">
+      <p>
+        {{project.description}}
+      </p>
+    </div>
+  </div>
+  {{/each}} --}}

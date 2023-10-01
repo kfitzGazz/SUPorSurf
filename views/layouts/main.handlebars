@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Rubik" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <!--START META DATA PAGE DESCRIPTION-->
@@ -22,8 +21,7 @@
 <body>
 
   <nav>
-    <a href="#top"><img class="arrow_image" src="/images/arrow.svg"></a>
-    <a name="top"></a>
+    <a href="#top"><img class="arrow_image" src="/images/arrow.svg"></a><a name="top"></a>
     <div id="change_class" class="flex_container section menu_section">
       <div class="flex_item branding">
         <p></p>
@@ -33,36 +31,22 @@
         <div class="dropdown-content">
           <div class="menu_item menu_item_inside"><a href="#top">
               <p>Home</p>
+            </a></div><a href=""></a>
+          <div class="menu_item menu_item_inside"><a href="#team">
+              <p>Login</p>
+            </a></div><a href=""></a>
+          <div class="menu_item menu_item_inside"><a href="#contact">
+              <p>Surfboard/1</p>
             </a></div>
-          <a href="">
-            <div class="menu_item menu_item_inside"><a href="#team">
-                <p>Team</p>
-              </a></div>
-            <a href="">
-              <div class="menu_item menu_item_inside"><a href="#contact">
-                  <p>Offers</p>
-                </a></div>
         </div>
-      </div>
-      <div class="flex_item menu_item menu_item_outside"><a href="#top">
-          <p>Home</p>
-        </a></div>
-      <div class="flex_item menu_item menu_item_outside"><a href="#team">
-          <p>Team</p>
-        </a></div>
-      <div class="flex_item menu_item menu_item_outside"><a href="#contact">
-          <p>Offers</p>
-        </a></div></a>
-    </div>
-    <!-- Conditionally render login or logout links -->
-    {{#if logged_in}}
-    <a href="/profile">profile</a> |
-    <button class="no-button" id="logout">logout</button>
-    {{else}}
-    <a href="/login">login</a>
-
-    <a href="/login">signup</a>
-    {{/if}}
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        <a href="/login">signup</a>
+        {{/if}}
   </nav>
   </header>
   <main class="container container-fluid mt-5">
@@ -81,9 +65,12 @@
 
   <div id="map"></div>
 
-<div class="section footer_section">
-	<a href="https://www.calmarsolutions.ch"><p class="footer_text">Margs Surf Camp - Wallcliffe Rd. 1050, Margaret River WA - WebDevelopment: Calmar Solutions</p></a>
-</div>
+  <div class="section footer_section">
+    <a href="https://www.calmarsolutions.ch">
+      <p class="footer_text">Margs Surf Camp - Wallcliffe Rd. 1050, Margaret River WA - WebDevelopment: Calmar Solutions
+      </p>
+    </a>
+  </div>
 
 </body>
 
