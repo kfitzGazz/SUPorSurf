@@ -61,10 +61,12 @@ const newFormHandler = async (event) => {
  
   const locationState = document.querySelector('#surfboard-state').value.trim();
 
-  const comments = document.querySelector('#surfboard-comm').value.trim();
+
+  const comments = document.querySelector('#surfboard-desc').value.trim();
 
   if (locationCity && locationState && comments ) {
-    const response = await fetch(`/api/surfboards`, {
+    const response = await fetch(`/api/surfboard`, {
+
       method: 'POST',
       body: JSON.stringify({ locationCity, locationState, comments }),
       headers: {
@@ -73,7 +75,10 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/surfboard');
+
+      alert('Successful wave');
+      // document.location.replace(`/surfboard/${id}`);
+
     } else {
       alert('Failed to create surfboard');
     }
@@ -87,17 +92,68 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/surfboards/${id}`, {
+    const response = await fetch(`/api/surfboard/${id}`, {
+
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/surfboard');
+
+      alert('Surfboard deleted')
+      // document.location.replace('/surfboard');
+
     } else {
       alert('Failed to delete surfboard');
     }
   }
 };
+
+const createButtonHandler = async (event) => {
+  
+
+  const locationCity = document.querySelector('#surfboard-city').value.trim();
+ 
+  const locationState = document.querySelector('#surfboard-state').value.trim();
+
+  const comments = document.querySelector('#surfboard-desc').value.trim();
+
+  if (event.target.hasAttribute('data-create')) {
+    const id = event.target.getAttribute('data-create');
+
+
+  
+    const response = await fetch('/api/surfboard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Set the content type to JSON
+      },
+      body: JSON.stringify({ locationCity, locationState, comments }), 
+    });
+  
+    if (response.ok) {
+      // Redirect to a page or perform any other action upon successful creation.
+      // document.location.replace(`/surfboard/${id}`);
+      alert('Successful wave 2')
+    } else {
+      alert('Failed to create surfboard 2');
+    }
+    }
+  }
+
+
+
+
+// Assuming you have a button element with an id like 'createButton', you can add an event listener like this:
+const createButton = document.getElementById('createButton');
+if (createButton) {
+  createButton.addEventListener('click', createButtonHandler);
+}
+
+
+
+
+
+
 
 document
   .querySelector('.new-surfboard-form')
@@ -106,3 +162,8 @@ document
 document
   .querySelector('.surfboard-list')
   .addEventListener('click', delButtonHandler);
+
+
+
+
+  

@@ -4,7 +4,10 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
   try {
+    console.log('Request Body:', req.body);
+    console.log('User ID:', req.session.user_id);
     const newSurfBoard = await SurfBoard.create({
+    
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -17,7 +20,8 @@ router.post('/', async (req, res) => {
 
 //req.body will show all information inside of SurfBoard model
 
-router.delete('/:id', withAuth, async (req, res) => {
+
+router.delete('/:id', async (req, res) => {
   try {
     const SurfBoardData = await SurfBoard.destroy({
       where: {
