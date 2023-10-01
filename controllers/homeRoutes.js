@@ -42,6 +42,7 @@ router.get('/surfboard/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username'],
+
         },
       ],
     });
