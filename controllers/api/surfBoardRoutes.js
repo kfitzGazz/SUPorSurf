@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     const newSurfBoard = await SurfBoard.create({
     
       ...req.body,
-      user_id: req.session.user_id,
+      user_id: req.session.id,
     });
 
     res.status(200).json(newSurfBoard);
