@@ -313,12 +313,14 @@ a:active {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
+		z-index: 3;
 
 		background-color: transparent;
 	}
 
 	.menu_item_outside {
 		display: none;
+		z-index: 3;
 	}
 }
 
