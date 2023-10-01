@@ -2,9 +2,12 @@ const router = require('express').Router();
 const { SurfBoard,User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    console.log('Request Body:', req.body);
+    console.log('User ID:', req.session.user_id);
     const newSurfBoard = await SurfBoard.create({
+    
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -15,7 +18,10 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+//req.body will show all information inside of SurfBoard model
+
+
+router.delete('/:id', async (req, res) => {
   try {
     const SurfBoardData = await SurfBoard.destroy({
       where: {
@@ -34,7 +40,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//^this will delete a post based on the id and user_id, so when creating the detelet button need to make sure these are the parameters used. 
 
 //http://localhost:3001/api/SurfBoards/
 router.get("/", async (req, res) => {
@@ -43,7 +49,7 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });

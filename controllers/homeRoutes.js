@@ -47,8 +47,8 @@ router.get('/surfboard/:id', async (req, res) => {
     });
 
     const surfBoard = SurfBoardData.get({ plain: true });
-
-    res.render('surfboard', {
+    console.log(surfBoard)
+    res.render('surfBoard', {
       ...surfBoard,
       // logged_in: req.session.logged_in
     });
@@ -60,30 +60,30 @@ router.get('/surfboard/:id', async (req, res) => {
 
 //http://localhost:3001/profile
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: SurfBoard }],
-    });
+// router.get('/profile', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: SurfBoard }],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('profile', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 //http://localhost:3001/login
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/homepage');
     return;
   }
 

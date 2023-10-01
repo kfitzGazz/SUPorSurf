@@ -11,13 +11,13 @@ $('a[href*="#"]')
   .click(function(event) {
     // On-page links
     if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      location.pathusername.replace(/^\//, '') == this.pathusername.replace(/^\//, '') 
       && 
-      location.hostname == this.hostname
+      location.hostusername == this.hostusername
     ) {
       // Figure out element to scroll to
       var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      target = target.length ? target : $('[username=' + this.hash.slice(1) + ']');
       // Does a scroll target exist?
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
@@ -57,47 +57,113 @@ $('a[href*="#"]')
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const locationCity = document.querySelector('#surfboard-city').value.trim();
+ 
+  const locationState = document.querySelector('#surfboard-state').value.trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+
+  const comments = document.querySelector('#surfboard-desc').value.trim();
+
+  if (locationCity && locationState && comments ) {
+    const response = await fetch(`/api/surfboard`, {
+
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ locationCity, locationState, comments }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+
+      alert('Successful wave');
+      // document.location.replace(`/surfboard/${id}`);
+
     } else {
-      alert('Failed to create project');
+      alert('Failed to create surfboard');
     }
   }
 };
+//^^if username and description have values, then it will send a http post request to an api endpoint (api/surfboard)
+//requests for the username and description date
+
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/surfboard/${id}`, {
+
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+
+      alert('Surfboard deleted')
+      // document.location.replace('/surfboard');
+
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete surfboard');
     }
   }
 };
 
+const createButtonHandler = async (event) => {
+  
+
+  const locationCity = document.querySelector('#surfboard-city').value.trim();
+ 
+  const locationState = document.querySelector('#surfboard-state').value.trim();
+
+  const comments = document.querySelector('#surfboard-desc').value.trim();
+
+  if (event.target.hasAttribute('data-create')) {
+    const id = event.target.getAttribute('data-create');
+
+
+  
+    const response = await fetch('/api/surfboard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Set the content type to JSON
+      },
+      body: JSON.stringify({ locationCity, locationState, comments }), 
+    });
+  
+    if (response.ok) {
+      // Redirect to a page or perform any other action upon successful creation.
+      // document.location.replace(`/surfboard/${id}`);
+      alert('Successful wave 2')
+    } else {
+      alert('Failed to create surfboard 2');
+    }
+    }
+  }
+
+
+
+
+// Assuming you have a button element with an id like 'createButton', you can add an event listener like this:
+const createButton = document.getElementById('createButton');
+if (createButton) {
+  createButton.addEventListener('click', createButtonHandler);
+}
+
+
+
+
+
+
+
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-surfboard-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.surfboard-list')
   .addEventListener('click', delButtonHandler);
+
+
+
+
+  

@@ -126,7 +126,7 @@ a:active {
 	width: 100px;
 	height: 100px;
 	z-index: 200;
-
+	
 	/*transform & rotate*/
 	-webkit-transition: -webkit-transform .1s;
 	Safari transition: transform .1s;
@@ -211,20 +211,6 @@ a:active {
 .header_text {
 	padding-top: 100px;
 	min-width: 100%;
-}
-
-/*GOOGLE MAPS*/
-#map {
-	height: 400px;
-	width: 100%;
-	background-color: white;
-
-	border-top: 1px solid white;
-
-	/*REMOVE TO MAKE MAP GRAY
-	-webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    */
 }
 
 /*MENU*/
@@ -404,11 +390,9 @@ a:active {
 }
 
 .header_section {
-	background-image: url(./images/background2_web.jpg);
+	background-image: url(/public/images/background1_web.jpg);
 	background-size: cover;
 }
-
-.header_section_container {}
 
 /*SECOND*/
 .second_section {
