@@ -45,15 +45,7 @@
 </div>
 {{!-- //figiure out why this is not showing up --}}
 {{!-- open up templateand insert the template page info here again in plan html, then see if we can feed info in this  --}}
-{{#if surfboard.length}}
-<div class="col-md-6 text header_text">
-	<h3>What are the waves saying?</h3>
 
-	{{#each surfboard as |surfboard|}}
-	<div class="feature offer flex_feature_item offer3">
-		<div class="row mb-2">
-			<div class="col-md-8">
-				<h4><a href="api/surfboard/{{surfboard}}">{{surfboard.username}}</a></h4>
 
 
 {{#if surfboard.length}}
@@ -91,35 +83,3 @@
 
 <script src="/js/profile.js"></script>
 
-{{!-- {{#if surfboard.length}}
-<div class="feature offer flex_feature_item offer3">
-	<div class="row mt-4">
-		<div class="col-md-6">
-			<h3>What are the waves saying?</h3>
-
-			{{#each surfboards |surfboard|}}
-
-			<div class="feature offer flex_feature_item offer3">
-				<div class="row mb-2">
-					<div class="col-md-8">
-						<h4><a href="/surfboard/{{surfboard.id}}">{{surfboard.username}}</a></h4>
-					</div>
-					<p>Location of the Waves:
-						<span class="text body_text flex_item flex_header_item">{{surfboard.locationState}}</span>
-					</p>
-					<p>City: {{surfboard.locationCity}} on {{format_date surfboard.date_created}}</p>
-					<div class="col-md-7">
-						<p>
-							{{surfboard.comments}}
-						</p>
-					</div>
-
-					<div class="col-md-4">
-						<button class="btn btn-sm btn-danger" data-id="{{surfboard.id}}">DELETE</button>
-					</div>
-				</div>
-			</div>
-			{{/each}}
-		</div>
-		{{/if}}
-	</div> --}}
