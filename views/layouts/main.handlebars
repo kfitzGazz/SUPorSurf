@@ -26,26 +26,28 @@
 
     <div id="change_class" class="flex_container section menu_section">
       <div class="flex_item branding">
-        <p></p>
+        <img src="./images/logo.png" alt="" style="width: 150px; height: 120px;">
       </div>
       <div class="flex_item menu_item dropdown">
         <p>Menu</p>
         <div class="dropdown-content">
-          <div class="menu_item menu_item_inside"><a href="#top">
+          <div class="menu_item menu_item_inside"><a href="/">
               <p>Home</p>
             </a></div>
           <a href="">
-            <div class="menu_item menu_item_inside"><a href="#team">
+            <div class="menu_item menu_item_inside"><a href="/login">
                 <p>Login</p>
               </a></div>
             <a href="">
-              <div class="menu_item menu_item_inside"><a href="#contact">
-                  <p>Surfboard</p>
+              <div class="menu_item menu_item_inside"><a href="/surfboard/{{id}}">
+                  <p>surfBoard</p>
                 </a></div>
+                <a href="">
               <div class="menu_item menu_item_inside"><a href="#contact">
-                  <p>logout</p>
+                  <p>Logout</p>
                 </a></div>
         </div>
+        
       </div>
       <div class="flex_item menu_item menu_item_outside"><a href="/">
           <p>Home</p>
@@ -53,11 +55,11 @@
       <div class="flex_item menu_item menu_item_outside"><a href="/login">
           <p>Login</p>
         </a></div>
-      <div class="flex_item menu_item menu_item_outside"><a href="/surfboard/1">
-          <p>Surfboard</p>
+      <div class="flex_item menu_item menu_item_outside"><a href="/surfboard/{{id}}">
+          <p>surfBoard</p>
         </a></div></a>
-      <div class="flex_item menu_item menu_item_outside"><a href="/">
-          <p>logout</p>
+    <div class="flex_item menu_item menu_item_outside"><a href="#logout">
+          <p>Logout</p>
         </a></div></a>
     </div>
     <!-- Conditionally render login or logout links -->
