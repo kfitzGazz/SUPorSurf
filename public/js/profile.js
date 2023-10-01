@@ -61,10 +61,12 @@ const newFormHandler = async (event) => {
  
   const locationState = document.querySelector('#surfboard-state').value.trim();
 
+
   const comments = document.querySelector('#surfboard-desc').value.trim();
 
   if (locationCity && locationState && comments ) {
     const response = await fetch(`/api/surfboard`, {
+
       method: 'POST',
       body: JSON.stringify({ locationCity, locationState, comments }),
       headers: {
@@ -73,8 +75,10 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
+
       alert('Successful wave');
       // document.location.replace(`/surfboard/${id}`);
+
     } else {
       alert('Failed to create surfboard');
     }
@@ -89,12 +93,15 @@ const delButtonHandler = async (event) => {
     const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/surfboard/${id}`, {
+
       method: 'DELETE',
     });
 
     if (response.ok) {
+
       alert('Surfboard deleted')
       // document.location.replace('/surfboard');
+
     } else {
       alert('Failed to delete surfboard');
     }

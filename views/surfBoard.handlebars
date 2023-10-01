@@ -13,6 +13,7 @@
 			<div class="col-md-6">
 				<h3>Create a New surfboard:</h3>
 
+
 					<form class="form new-surfboard-form">
 						<div class="form-group">
 							<label for="surfboard-city-title">City:</label>
@@ -24,13 +25,16 @@
 								<input class="form-input" type="text" id="surfboard-state" name="surfboard-name" />
 							</div>
 
+
 							<div class="form-group">
 								<label for="surfboard-comm">Comments:</label>
 								<textarea class="form-input" id="surfboard-desc" name="surfboard-desc"></textarea>
 							</div>
 							<div class="form-group">
+
 								<button type="submit" class="btn btn-primary" id="createButton"
 									data-create="{{surfboard.id}}">Create</button>
+
 							</div>
 						</form>
 			</div>
@@ -50,6 +54,17 @@
 		<div class="row mb-2">
 			<div class="col-md-8">
 				<h4><a href="api/surfboard/{{surfboard}}">{{surfboard.username}}</a></h4>
+
+
+{{#if surfboard.length}}
+<div class="col-md-6 text header_text">
+	<h3>What are the waves saying?</h3>
+
+	{{#each surfboard as |surfboard|}}
+	<div class="feature offer flex_feature_item offer3">
+		<div class="row mb-2">
+			<div class="col-md-8">
+				<h4><a href="api/surfboards/{{surfboard.id}}">{{surfboard.username}}</a></h4>
 
 			</div>
 			<p>Location of the Waves:

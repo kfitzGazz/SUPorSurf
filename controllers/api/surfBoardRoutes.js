@@ -20,6 +20,7 @@ router.post('/', async (req, res) => {
 
 //req.body will show all information inside of SurfBoard model
 
+
 router.delete('/:id', async (req, res) => {
   try {
     const SurfBoardData = await SurfBoard.destroy({
