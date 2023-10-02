@@ -44,7 +44,7 @@ SurfBoard.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'SurfBoard',
+    modelName: 'surfboard',
   }
 );
 
