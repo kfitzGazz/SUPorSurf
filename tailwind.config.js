@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./views/layouts/main.handlebars*.{html,js}"],
+  content: ["./views/layouts/surfBoard.handlebars"],
   theme: {
     extend: {},
   },
