@@ -3,7 +3,7 @@ const { User, SurfBoard, Emoji } = require('../models');
 const emojiData = require("./emojiData.json");
 
 const userData = require('./userData.json');
-const surfboardData = require('./SurfBoardData.json');
+const surfboardData = require('./surfboardData.json');
 
 
 const seedDatabase = async () => {
