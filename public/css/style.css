@@ -140,6 +140,15 @@ a:active {
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
+.gradient_login {
+	position: absolute;
+	width: 100%;
+	height: 2000px;
+	padding: 0;
+	margin: 0;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	}
 
 .gradient_red_yellow {
 	background: #FF4136;
@@ -399,7 +408,7 @@ a:active {
 	min-width: 550px;
 	max-width: 300px;
 	height: 450px;
-	margin-right: 60%;
+	margin-right: 40%;
 	margin-left: 40%;
 	margin-bottom: 40px;
 	padding-top: 10px;
