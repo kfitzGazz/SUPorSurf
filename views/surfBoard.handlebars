@@ -1,16 +1,18 @@
+<link href="/dist/output.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
+
 
 <div class="section page third_section">
 	<a name="contact"></a>
 	<div class="gradient gradient_red_yellow gradient_third_section"></div>
 	<div class="section_container third_section_container flex_container flex_center">
 		<div class="text header_text">
-			<h1>Welcome, {{username}}!</h1>
+			<h1>SurfBoard</h1>
 		</div>
 	</div>
 	<div class="feature offer flex_feature_item offer3">
 		<div class="row mt-4">
-			<div class="col-md-6">
+			<div class="text col-md-6">
 				<h3>Create a New surfboard:</h3>
 
 
@@ -49,32 +51,33 @@
 
 
 {{#if surfBoards.length}}
-<div class="surfboard-list col-md-6 text header_text">
-	<h3>What are the waves saying?</h3>
-
+<div class="surfboard-list col-md-6 text header_text gradient_red_blue" id="card-surfboard">
+	<h2>What are the waves saying?</h2>
+<div class="row">
 	{{#each surfBoards as |surfboard|}}
-	<div class="feature offer flex_feature_item offer3">
-		<div class="row mb-2">
-			<div class="col-md-8">
+	<div class="feature offer flex_feature_item offer1">
+		
+			
 				<h4><a href="api/surfboard">{{surfboard.locationCity}}</a></h4>
 
-			</div>
+			
 			<p>Location of the Waves:
-				<span class="text body_text flex_item flex_header_item">{{surfboard.locationState}}</span>
+				<span class="col-md-4 offset-md-8">{{surfboard.locationState}}</span>
 			</p>
 			<p>City: {{surfboard.locationCity}} on {{format_date surfboard.date_created}}</p>
-			<div class="col-md-7">
+			<div class="col-md-4 offset-md-8">
 				<p>
 					{{surfboard.comments}}
 				</p>
 			</div>
 
-			<div class="col-md-4">
-				<button class="btn btn-sm btn-danger" data-id="{{surfboard.id}}">DELETE</button>
+			<div>
+				<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-id="{{surfboard.id}}">DELETE</button>
 			</div>
-		</div>
+		
 	</div>
 	{{/each}}
+</div>
 </div>
 {{/if}}
 </div>
