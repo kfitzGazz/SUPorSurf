@@ -1,8 +1,6 @@
-# project2-UM
+# Project 2 - Surf or Sup
 ## Site Application
-Sup or Surf was created to entertain the surfing enthusiast by providing a far out application where they can conveniently look up weather and tide reports for any beach worldwide, surf the site for the best surfing gear and equipment, sign up or sign in and see or post tubular surfing tips and beach reviews and stay up to date with everything surfing related.
-
-![welcome page](/public/images/suporsurf%20homepage.jpg.png)
+Surf or Sup was created to entertain the surfing enthusiast by providing a far out application where they can conveniently look up weather and tide reports for any beach worldwide, surf the site for the best surfing gear and equipment, sign up or sign in and see or post tubular surfing tips and beach reviews and stay up to date with everything surfing related.
 
 ## User Story
 ```
@@ -12,69 +10,86 @@ SO THAT I can stay informed with all there is to surfing and even share my aweso
 ```
 
 ## Acceptance Criteria
-```
+``` 
 GIVEN I need a surfing application that is informative and interactive 
 WHEN I load the website
-THEN I am presented with a unique website where you can sign up and/or sign in.
+THEN I am presented with a unique website where you can sign up and/or sign in
 WHEN I click on the "home" button
-THEN I am taken back to the homepage or the homepage is refreshed.
+THEN I am taken back to the homepage or the homepage is refreshed
 WHEN I click on the "login" button
-THEN a am taken to the sign up or login in page.
+THEN I am taken to the sign up or login page
 WHEN I click the "surfboard" button
-THEN I ....
+THEN I am taken to the dashboard
+WHEN I fill in the inputs to create a new surfboard 
+THEN I click create and make my first post
+WHEN I click the scroll to the top button
+THEN I am taken to the top of the page
 WHEN I enter my login info
-THEN I ....
-
-```
-
-
-## Installation
-Install package-lock.json
-Install tailwind CSS
-Downloaded Node.js package manager and npm.
-
-## Usage
-
-Click this link to hang ten: https://github.com/kfitzGazz/project2-UM
-
-## Credits
-- APIs used from .... and .... 
-- TailwindCSS 
-
-## License
-
-[MIT License](https://opensource.org/licenses/MIT)
-
-
+THEN I am logged in and taken to the dashboard
+WHEN I click logout 
+THEN I am logged out of my account
+``` 
 ## Features
 
 #### Welcome Page
 * Users have the option to sign up or login, check weather info or simply surf the site for a multitude of resources.
 
-#### explore the waves
+#### Explore The Waves
 * Our comprehensive database provides detailed information on wave conditions, tides, and local amenities. 
 
-#### gear up for adventure
+#### Gear Up For Adventure
 * From boards to wetsuits, find the best equipment curated by our experts.
 
-#### Expert Reviews and Recommendations
+#### Expert Reviews And Recommendations
 * Our team of seasoned surfers and paddlers provide in-depth reviews and personalized recommendations based on your preferences and skill level.
 
-#### Latest Forecasts, News and Updates
+#### Latest Forecasts, News, And Updates
 * Stay up-to-date with the latest trends, news, and events in the surfing and paddleboarding world. Get insider tips on technique, safety, and gear.
 * Plan your sessions with precision. Access accurate weather forecasts and tide information tailored to your location.
 
 
-## Contributors
+## Usage & Deployment Link
 
-* [Lissette Garcia](https://github.com/bizwliz)
-* [Elizabeth Kovalchick](https://github.com/ekovalchick)
-* [Kyleigh Fitzgerald Gazzolo](https://github.com/kfitzGazz)
-* [Felipe Sierra](https://github.com/felipesierra10)
+- Click <a href="https://github.com/kfitzGazz/project2-UM">here</a> to visit our GitHub
+- Click <a href="">here</a> to hang ten with Surf or Sup!
 
-## Tests
+<img src="./public/images/readmephoto.png" alt="photo of website"></img>
 
-Using Visual studio Code
+## Installation & Contributors
+<table border="1">
+ <tr>
+    <td><b style="font-size:20px">Installation</b></td>
+    <td><b style="font-size:20px">Team Members</b></td>
+ </tr>
+ <tr>
+    <td>
+        <li>Create Repo in Github</li>
+        <li>Install package-lock.json  </li>
+        <li>Downloaded Node.js package manager and npm.  </li>
+        <li>Install tailwind CSS  </li>
+        <li>Create database</li>
+        <li>Create organized handlebars format</li>
+        <li>README.md</li>
+        <li>Deployment</li>
+    </td>
+<td>
+    <ol>
+        <li><a href ="https://github.com/bizwliz">Lissette Garcia</a></li>
+        <li><a href ="https://github.com/ekovalchick">Elizabeth Kovalchick</a></li>
+        <li><a href ="https://github.com/kfitzGazz">Kyleigh Fitzgerald Gazzolo</a></li>
+        <li><a href ="https://github.com/felipesierra10">Felipe Sierra</a></li>
+        </ol>
+    </td>
+</tr>
+</table>
 
+## Credits
+- <a href="https://tailwindcss.com/">TailwindCSS</a>
+- <a href="https://www.free-css.com/free-css-templates/page239/surf-camp">CSS Template</a>
+
+## Tests & License
+
+- Tested Using Visual Studio Code
+- [MIT License](https://opensource.org/licenses/MIT)
 - - -
-© 2023 Sup or Surf?
+© 2023 Surf or Sup
