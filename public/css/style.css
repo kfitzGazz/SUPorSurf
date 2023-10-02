@@ -65,6 +65,8 @@ a:active {
 	color: #001f3f;
 }
 
+
+
 /*GENERAL*/
 .section {}
 
@@ -132,7 +134,7 @@ a:active {
 .gradient {
 	position: absolute;
 	width: 100%;
-	height: 800px;
+	height: 900px;
 	padding: 0;
 	margin: 0;
 	opacity: 0.5;
@@ -193,6 +195,7 @@ a:active {
 .header_text {
 	padding-top: 100px;
 	min-width: 100%;
+	text-align: center;
 }
 
 /*MENU*/
@@ -353,7 +356,9 @@ a:active {
 	-webkit-transform: scale(1.0);
 	-ms-transform: scale(1.0);
 	transform: scale(1.0);
+	
 }
+
 
 .flex_feature_item:hover {
 	-webkit-transform: scale(1.1);
@@ -393,9 +398,9 @@ a:active {
 .feature {
 	min-width: 550px;
 	max-width: 300px;
-	height: 400px;
-	margin-right: 20px;
-	margin-left: 20px;
+	height: 450px;
+	margin-right: 60%;
+	margin-left: 40%;
 	margin-bottom: 40px;
 	padding-top: 10px;
 	text-align: center;
@@ -438,7 +443,7 @@ a:active {
 }
 
 .offer p {
-	max-width: 70%;
+	max-width: 100%;
 }
 
 /*THIRD*/
@@ -451,7 +456,7 @@ a:active {
 
 @media screen and (max-width: 1619px) {
 	.gradient_third_section {
-		height: 1247.19px;
+		height: 3500px;
 	}
 }
 
@@ -486,6 +491,10 @@ a:active {
 /* custom text for body */
 .custom-font-text {
 	font-family: 'Roboto', sans-serif;
+}
+
+#card-surfboard{
+	right:150px;
 }
 
 @tailwind base;
