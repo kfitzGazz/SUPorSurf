@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: SECRET,
+  secret: 'suporsurf',
   cookie: {
     maxAge: 300000,
     httpOnly: true,
