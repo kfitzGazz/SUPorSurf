@@ -1,42 +1,37 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
+<div class="section page second_section">
+  <a name="team"></a>
+  <div class="section_container second_section_container flex_container flex_center">
+    <div class="gradient_login gradient_green_yellow gradient_header_section"></div>
+    <div class="text header_text text_grad_purple_yellow">
+      <h1>Join our Digital Wave</h1>
+    </div>
+    <div class="feature flex_feature_item feature1">
+      <form class="signup-form">
+        <div class="feature_image"></div>
+        <h2>Sign Up</h2>
+        <div><label for="username-signup" class="custom-font-text">Username:</label></div>
+        <input type="text" id="username-signup" name="username" required autocomplete="off">
+        <div><label for="email-signup" class="custom-font-text">Email:</label></div>
+        <input type="email" id="email-signup" name="email" required autocomplete="off">
+        <div><label for="password-signup" class="custom-font-text">Password:</label></div>
+        <input type="password" id="password-signup" name="password" required>
+        <div><button id="signup-button" type="submit" class="custom-font-text">Sign Up</button></div>
+      </form>
+    </div>
+    <div class="feature flex_feature_item feature2">
+      <form class="login-form">
+        <div class="feature_image"></div>
+        <h2>Login</h2>
+        <div><label for="email-login" class="custom-font-text">Email:</label></div>
+        <input type="email" id="email-login" name="email" required autocomplete="off">
+        <div><label for="password-login" class="custom-font-text">Password:</label></div>
+        <input type="password" id="password-login" name="password" required>
+        <div><button button id="login-button" type="submit" class="custom-font-text">Login</button></div>
+      </form>
+    </div>
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="js/login.js"></script>

@@ -2,45 +2,92 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Rubik" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <!--START META DATA PAGE DESCRIPTION-->
+  <meta name="Author" content="Calmar Solutions Schweiz - Erin McGowan - www.calmarsolutions.ch">
+  <meta name="Copyright" content="Calmar Solutions">
+  <meta name="Credit" content="https://thenounproject.com/">
+  <meta name="description" content="Margs Surfcamp Margaret River">
+  <meta name="keywords" content="Surfing, Camping, Margaret River, Western Australia">
+
+  <!--END META DATA PAGE DESCRIPTION-->
+
+  <title>SUP or Surf? Find your local waves, connect with the crew and scout the break!</title>
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
 
-               <a href="/login">signup</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+  <nav>
+    <a href="#top"><img class="arrow_image" src="/images/arrow.png"></a>
+    <a name="top"></a>
+
+    <div id="change_class" class="flex_container section menu_section">
+      <div class="flex_item branding">
+        <img src="./images/logo.png" alt="" style="width: 200px; height: 120px;">
+      </div>
+      <div class="flex_item menu_item dropdown">
+        <p>Menu</p>
+        <div class="dropdown-content">
+          <div class="menu_item menu_item_inside"><a href="/">
+              <p>Home</p>
+            </a></div>
+          <a href="">
+            <div class="menu_item menu_item_inside"><a href="/login">
+                <p>Login</p>
+              </a></div>
+            <a href="">
+              <div class="menu_item menu_item_inside"><a href="/surfboard/{{id}}">
+                  <p>SurfBoard</p>
+                </a></div>
+        </div>
+        
+      </div>
+      <div class="flex_item menu_item menu_item_outside"><a href="/">
+          <p>Home</p>
+        </a></div>
+      <div class="flex_item menu_item menu_item_outside"><a href="/login">
+          <p>Login</p>
+        </a></div>
+      <div class="flex_item menu_item menu_item_outside"><a href="/surfboard">
+          <p>surfBoard</p>
+        </a></div></a>
+    </div>
+    <!-- Conditionally render login or logout links -->
+    {{#if logged_in}}
+    <a href="/profile">profile</a> |
+    <button class="no-button" id="logout">logout</button>
+    {{else}}
+    <a href="/">login</a>
+
+    <a href="/">signup</a>
+    {{/if}}
+  </nav>
+  </header>
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
+
+  </footer>
   </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+
+<div class="section footer_section">
+	<a href="/login"><p class="footer_text">SURF OR SUP - FIND WAVES, SHARE STORES, SURF SMARTER - JOIN TODAY</p></a>
+</div>
+
+
 </body>
 
 </html>

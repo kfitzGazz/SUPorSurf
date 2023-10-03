@@ -1,24 +1,66 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
+
+<div class="section page header_section">
+<div class="gradient gradient_red_blue gradient_header_section"></div>
+	<div class="section_container header_section_container flex_container flex_header_container">
+		<div class="text header_text">
+			<h1>SUP or Surf?</h1>
+		</div>
+		<div class="text body_text flex_item flex_header_item">
+			<h2 class="header_quote">Find your local waves, connect with the crew and scout the break!</h2>
+		</div>
+	</div>
 </div>
-{{/each}}
+
+<h2>Explore the Waves</h2>
+
+
+
+<h3>Discover the Best Spots</h3>
+<p>Uncover hidden gems and popular surf breaks near you. Our comprehensive database provides detailed information on wave conditions, tides, and local amenities. Whether you're a seasoned pro or a beginner, we've got the perfect spot for you.</p>
+
+
+<h3>Connect with the Crew</h3>
+<p>Join our vibrant community of water enthusiasts. Share tips, stories, and connect with fellow surfers and paddleboarders. Get insights from locals and experts, and make lasting connections with those who share your passion for the waves.</p>
+
+<!-- Top-Quality Gear -->
+<h2>Gear up for Adventure</h2>
+
+<h3>Top-Quality Gear</h3>
+<p>From boards to wetsuits, find the best equipment curated by our experts. We've handpicked a selection of top-quality gear to ensure you're equipped for every wave, no matter your skill level.</p>
+
+<!-- Expert Reviews and Recommendations -->
+<h3>Expert Reviews and Recommendations</h3>
+<p>Not sure what gear is right for you? Our team of seasoned surfers and paddlers provide in-depth reviews and personalized recommendations based on your preferences and skill level.</p>
+
+<!-- Stay Informed Section -->
+<h2>Stay Informed</h2>
+
+<!-- Latest News and Updates -->
+<h3>Latest News and Updates</h3>
+<p>Stay up-to-date with the latest trends, news, and events in the surfing and paddleboarding world. Get insider tips on technique, safety, and gear, ensuring you're always in the know.</p>
+
+<!-- Weather and Tide Forecasts -->
+<h3>Weather and Tide Forecasts</h3>
+<p>Plan your sessions with precision. Access accurate weather forecasts and tide information tailored to your location. Never miss a perfect day on the water again!</p>
+
+<!-- Ready to Catch Some Waves? Section -->
+<h2>Ready to Catch Some Waves?</h2>
+
+
+<!-- Get Started CTA -->
+<p>Join our community today and start exploring the waves. Whether you're a seasoned surfer or a first-time paddler, we're here to help you find your perfect wave.</p>
+
+<!-- Sign Up Button -->
+<a href="/login"><button>Sign Up Now</button></a> *or* <a href="/surfboard">Explore our Blog</a>
+
+<!-- Connect with Us -->
+<p>Connect with us on <a href="#">Facebook</a> and <a href="#">Instagram</a> for daily updates and inspiration.</p>
+
+<!-- Disclaimer -->
+<p>Disclaimer: Surf and paddleboarding are inherently risky activities. Please ensure you have the necessary skills, knowledge, and safety equipment before hitting the waves. Follow all local regulations and guidelines for water sports.</p>
+
+
+
+
+
+

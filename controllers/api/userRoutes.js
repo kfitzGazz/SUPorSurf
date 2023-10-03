@@ -5,7 +5,7 @@ const { User } = require('../../models');
 //callback req and res is your controller
 //api endpoint ->controller->model->return data to view
 router.post('/', async (req, res) => {
-  try {
+  // try {
     const userData = await User.create(req.body);
 
     req.session.save(() => {
@@ -14,10 +14,11 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(userData);
     });
-  } catch (err) {
-    res.status(400).json(err);
-  }
+  // } catch (err) {
+  //   res.status(400).json(err);
+  // }
 });
+//^this post creates a new user, saves thei session data showing they are logged in
 
 router.post('/login', async (req, res) => {
   try {
@@ -50,8 +51,9 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+//^user login, checks to see if the email exists in database and if password is correct. creates user session
 
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -60,5 +62,6 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+//this logs out the user 
 
 module.exports = router;

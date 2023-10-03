@@ -1,8 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { User, SurfBoard, Emoji } = require('../models');
+const emojiData = require("./emojiData.json");
 
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const surfboardData = require('./surfboardData.json');
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,10 +14,19 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
+  for (const surfboard of surfboardData) {
+    await SurfBoard.create({
+      ...surfboard,
       user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+const surfBoards = await SurfBoard.findAll()
+
+  for (const emoji of emojiData) {
+    await Emoji.create({
+      ...emoji,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+      surfboard_id: surfBoards[Math.floor(Math.random() * surfBoards.length)].id,
     });
   }
 

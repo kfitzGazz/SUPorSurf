@@ -1,28 +1,3 @@
-/* header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
-
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
-
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
-
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-} */
-
 /*BASIC*/
 html {
 	height: auto;
@@ -64,8 +39,6 @@ a:hover,
 a:active {
 	color: #001f3f;
 }
-
-
 
 /*GENERAL*/
 .section {}
@@ -109,15 +82,15 @@ a:active {
 	width: 100px;
 	height: 100px;
 	z-index: 200;
-	
-	transform & rotate
+
+	/*transform & rotate*/
 	-webkit-transition: -webkit-transform .1s;
-	Safari
+	/* Safari */
 	transition: transform .1s;
 
 	-webkit-transform: scale(1.0) rotate(-90deg);
 	-ms-transform: scale(1.0) rotate(-90deg);
-	transform: scale(1.0) rotate(360deg);
+	transform: scale(1.0) rotate(-90deg);
 }
 
 .arrow_image:hover {
@@ -134,21 +107,12 @@ a:active {
 .gradient {
 	position: absolute;
 	width: 100%;
-	height: 900px;
+	height: 800px;
 	padding: 0;
 	margin: 0;
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
-.gradient_login {
-	position: absolute;
-	width: 100%;
-	height: 2000px;
-	padding: 0;
-	margin: 0;
-	opacity: 0.5;
-	filter: alpha(opacity=50);
-	}
 
 .gradient_red_yellow {
 	background: #FF4136;
@@ -204,7 +168,20 @@ a:active {
 .header_text {
 	padding-top: 100px;
 	min-width: 100%;
-	text-align: center;
+}
+
+/*GOOGLE MAPS*/
+#map {
+	height: 400px;
+	width: 100%;
+	background-color: white;
+
+	border-top: 1px solid white;
+
+	/*REMOVE TO MAKE MAP GRAY
+	-webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    */
 }
 
 /*MENU*/
@@ -325,14 +302,12 @@ a:active {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
-		z-index: 3;
 
 		background-color: transparent;
 	}
 
 	.menu_item_outside {
 		display: none;
-		z-index: 3;
 	}
 }
 
@@ -365,9 +340,7 @@ a:active {
 	-webkit-transform: scale(1.0);
 	-ms-transform: scale(1.0);
 	transform: scale(1.0);
-	
 }
-
 
 .flex_feature_item:hover {
 	-webkit-transform: scale(1.1);
@@ -386,9 +359,11 @@ a:active {
 }
 
 .header_section {
-	background-image: url(/public/images/background1_web.jpg);
+	background-image: url(./images/background2_web.jpg);
 	background-size: cover;
 }
+
+.header_section_container {}
 
 /*SECOND*/
 .second_section {
@@ -405,14 +380,14 @@ a:active {
 
 /*FEATURED*/
 .feature {
-	min-width: 550px;
+	min-width: 250px;
 	max-width: 300px;
-	height: 450px;
-	margin-right: 40%;
-	margin-left: 40%;
+	height: 400px;
+	margin-right: 20px;
+	margin-left: 20px;
 	margin-bottom: 40px;
 	padding-top: 10px;
-	text-align: center;
+
 	color: #111111;
 	filter: grayscale(100%);
 
@@ -421,26 +396,45 @@ a:active {
 	box-shadow: 9px 10px 39px -2px rgba(0, 0, 0, 0.3);
 }
 
-/* for spacing between text in login page */
-.feature h2,
-.feature label,
-.feature input,
-.feature button {
-	margin-bottom: 10px;
+.feature h2 {
+	line-height: 0;
 }
 
-@media screen and (max-width: 767px) {
-
-	.feature h2,
-	.feature label,
-	.feature input,
-	.feature button {
-		margin-bottom: 5px;
-	}
+.feature p {
+	text-align: center;
+	margin: auto;
+	max-width: 200px;
 }
 
+.feature .feature_image {
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	border-radius: 200px;
+	background-size: cover;
+}
 
+.feature1 .feature_image {
+	background-image: url(./images/surf01.jpg);
+}
 
+.feature2 .feature_image {
+	background-image: url(./images/surf02.jpg);
+}
+
+.feature3 .feature_image {
+	background-image: url(./images/surf03.jpg);
+}
+
+.feature4 .feature_image {
+	background-image: url(./images/surf04.jpg);
+}
+
+.feature5 .feature_image {
+	background-image: url(./images/surf05.jpg);
+}
+
+/*OFFERS*/
 .offer {
 	min-width: 350px !important;
 	max-width: 500px !important;
@@ -452,7 +446,7 @@ a:active {
 }
 
 .offer p {
-	max-width: 100%;
+	max-width: 70%;
 }
 
 /*THIRD*/
@@ -465,7 +459,7 @@ a:active {
 
 @media screen and (max-width: 1619px) {
 	.gradient_third_section {
-		height: 3500px;
+		height: 1247.19px;
 	}
 }
 
@@ -496,27 +490,3 @@ a:active {
 	margin-top: 30px;
 	text-align: center;
 }
-
-/* custom text for body */
-.custom-font-text {
-	font-family: 'Roboto', sans-serif;
-}
-
-#card-surfboard{
-	right:150px;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* COMMENTED BELOW CODE OUT. CODE IS FOR SURFER PICTURES ON LOGIN PAGE WE ARENT USING */
-/* .feature h2 {line-height: 0;}
-	.feature p {text-align: center; margin: auto; max-width: 200px;}
-	.feature .feature_image {width: 200px; height: 200px; margin: auto; border-radius: 200px; background-size: cover;}
-	.feature1 .feature_image {background-image: url(./images/surf01.jpg);}
-	.feature2 .feature_image {background-image: url(./images/surf02.jpg);}
-	.feature3 .feature_image {background-image: url(./images/surf03.jpg);}
-	.feature4 .feature_image {background-image: url(./images/surf04.jpg);}
-	.feature5 .feature_image {background-image: url(./images/surf05.jpg);} */
-/*OFFERS*/
